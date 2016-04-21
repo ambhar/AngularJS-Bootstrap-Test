@@ -1,0 +1,65 @@
+<div class="col-md-8">
+						<ul class="nav nav-pills nav-justified">
+						  <li ng-class="{ active:Panel.isSelected(1)}"><a ng-click="Panel.selectTab(1)">Details</a></li>
+						  <li ng-class="{ active:Panel.isSelected(2)}"><a ng-click="Panel.selectTab(2)">Description</a></li>
+						  <li ng-class="{ active:Panel.isSelected(3)}"><a ng-click="Panel.selectTab(3)">Reviews</a></li>
+						</ul>
+						
+						
+						  <div ng-show="Panel.isSelected(1)" class="panel setpadding">
+							<book-detail></book-detail>
+						  </div>
+						  <div ng-show="Panel.isSelected(2)" class="panel setpadding">
+							<p>{{ book.description }}</p>
+						  </div>
+						  <div ng-show="Panel.isSelected(3)" class="panel setpadding">
+							<p  ng-repeat="review in book.reviews"><b>{{review.rating}} star rating </b> <br>{{review.comment}} <br><cite> by - {{review.user}}</cite></p>
+							
+							<form class="form-horizontal" name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(book)" novalidate>
+								<fieldset>
+							
+								<!-- Form Name -->
+								<legend>Add Review</legend>
+								<p><b>{{ reviewCtrl.review.rating }} star rating </b> <br>{{ reviewCtrl.review.comment }} <br><cite> by - {{ reviewCtrl.review.user }}</cite></p>
+								<!-- Select Basic -->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="selectbasic">Ratings</label>
+								  <div class="col-md-4">
+									<select id="selectbasic" name="selectbasic" class="form-control" ng-model="reviewCtrl.review.rating" required>
+									  <option value="1" selected="selected">1</option>
+									  <option value="2">2</option>
+									  <option value="3">3</option>
+									  <option value="4">4</option>
+									  <option value="5">5</option>
+									</select>
+								  </div>
+								</div>
+
+								<!-- Textarea -->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="textarea" >Comment</label>
+								  <div class="col-md-4">                     
+									<textarea class="form-control" id="textarea" name="textarea" ng-model="reviewCtrl.review.comment" required>Add your book related comments here</textarea>
+								  </div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="name">Your Name</label>  
+								  <div class="col-md-4">
+								  <input id="email" name="email" type="email" placeholder="Enter your Email" class="form-control input-md" required ng-model="reviewCtrl.review.user">
+									
+								  </div>
+								</div>
+								<div>reviewForm is {{reviewForm.$valid}}</div>
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="singlebutton"></label>
+								  <div class="col-md-4">
+									<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit Review</button>
+								  </div>
+								</div>
+
+								</fieldset>
+								</form>
+						  </div>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store" ng-cloak>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel="stylesheet">
+	
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Book Store</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   
+	<nav class="navbar navbar-inverse navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Book Store</a>
+        </div>
+        
+      </div>
+    </nav>
+	
+	<div class="container"  ng-controller="StoreController as bookstore">
+			<div class="row">
+				<div class="jumbotron">
+					<h2>Book Store</h2>
+					<p>Get your favorite books here.</p>
+				</div>
+			</div>
+			<div class="panel panel-default" ng-repeat="book in bookstore.products">
+				<div class="panel-heading">
+				  <h3 class="panel-title">Book Details</h3>
+				</div>
+			<div class="row setpadding" >
+					<div class="col-md-4">
+						<div class="row">
+							<img ng-src="images/{{book.image}}" class="img-responsive center-block img-thumbnail" width="304" height="236"/>
+						</div>
+						<div class="row" style="margin:auto;padding-top:5px"  ng-show="{{ book.availability }}" >
+							<center><button type="button" class="btn btn-lg btn-success" >Add to cart</button></center>
+						</div>
+						<div class="row" style="margin:auto;padding-top:5px"  ng-hide="{{ book.availability }}" >
+							<center><button type="button" class="btn btn-lg btn-danger" >Sold out</button></center>
+						</div>
+
+					</div>
+					<book-panels  ng-controller="PanelController as Panel"></book-panels>
+					
+				</div>
+			</div>
+	</div>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/books.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

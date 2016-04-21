@@ -1,0 +1,99 @@
+[
+{
+		"name":"Immortals of Meluha",
+		"price": "10",
+		"description":"A fiction based on Lord Shiva",
+		"image":"book.jpg",
+		"reviews":[
+			{
+				"rating":5,
+				"comment":"I enjoyed reading it.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":3,
+				"comment":"I was average.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":1,
+				"comment":"It was bad.",
+				"user":"abc@xyz.com"
+			}
+		],
+		"availability":"true"
+	},
+	{
+		"name":"The Da Vinci Code",
+		"price": 40,
+		"description":"A masterpiece by Dan Brown",
+		"image":"davinci.jpg",
+		"reviews":[
+			{
+				"rating":5,
+				"comment":"I enjoyed reading it.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":2,
+				"comment":"I was average.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":1,
+				"comment":"It was bad.",
+				"user":"abc@xyz.com"
+			}
+		],
+		"availability":"false"
+	},
+	{
+		"name":"How to win friends and influence people",
+		"price": 20,
+		"description":"A besselling book by Dale Carnegie",
+		"image":"howto.jpg",
+		"reviews":[
+			{
+				"rating":5,
+				"comment":"I enjoyed reading it.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":3,
+				"comment":"I was average.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":2,
+				"comment":"It was bad.",
+				"user":"abc@xyz.com"
+			}
+		],
+		"availability":"true"
+	},
+	{
+		"name":"Wings of Fire",
+		"price": 15,
+		"description":"Autobiography of Missile man of India (APJ Abdul Kalam)",
+		"image":"wings.jpg",
+		
+		"reviews":[
+			{
+				"rating":5,
+				"comment":"I enjoyed reading it.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":4,
+				"comment":"I was average.",
+				"user":"abc@xyz.com"
+			},
+			{
+				"rating":1,
+				"comment":"It was bad.",
+				"user":"abc@xyz.com"
+			}
+		],
+		"availability":"true"
+	}
+]
